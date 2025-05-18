@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Browser DLP Extension",
+    "version": "1.0",
+    "description": "Detects sensitive data entry and notifies security team.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage",
+      "notifications"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "48": "icons/warning.png"
+    }
+  }
+  
